@@ -1,0 +1,48 @@
+<!-- <input class="search" [(ngModel)] = "searchQuery" placeholder="Search for Image"> 
+<button (click)="searchImages(searchQuery)" type="button"> Find images </button>
+<br>
+
+<p *ngIf = "searching"> Fetching data...</p>
+
+<div *ngFor="let image of images" class = image-container>
+    <img src="{{ image.webformatURL}}">
+    <p>Tags: {{image.tags}}</p>
+    <p>Comments: {{image.comments}}</p>
+    <p>User: {{image.user}}</p>
+    <p>likes: {{image.likes}}</p>
+    <p>----------------------</p>
+
+</div> -->
+
+<form>
+  <div class="container ">
+  <input mdbInput type="text" id="form1" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)] = "searchQuery" />
+  <br>
+  <div class="center">
+  <button type="button" class="btn btn-primary" (click)="searchImages(searchQuery)" style="border-radius: 30px;"> Search Image</button>
+</div>
+</div>
+</form>
+<br>
+
+  <p *ngIf = "searching"> Fetching data...</p>
+
+<div class="row row-cols-1 row-cols-md-2 g-4" >
+  <div class="col" *ngFor="let image of images">
+    <div class="card">
+      <img
+        src="{{image.webformatURL}}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{image.tags}}</h5>
+        <p class="card-text">
+          User: {{image.user}}
+        </p>
+      </div>
+    </div>
+  </div>
+ 
+  
+</div>
